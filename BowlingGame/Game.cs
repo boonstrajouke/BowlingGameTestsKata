@@ -19,21 +19,42 @@
             {
                 if (rolls[roll] == 10) // strike
                 {
-                    score += 10 + rolls[roll + 1] + rolls(roll + 2);
-                    roll += 2;
+                    score += 10 + rolls[roll + 1] + rolls[roll + 2];
+                    roll++;
                 }
-                if (IsSpare(roll))
+                else if (IsSpare(roll))
                 {
                     score += 10 + rolls[roll + 2];
+                    roll += 2;
                 }
                 else
                 {
                     score += rolls[roll] + rolls[roll + 1];
+                    roll += 2;
                 }
-                roll += 2;
             }
 
             return score;
+        }
+
+        private bool IsStrike(int roll)
+        {
+            return rolls[roll] == 10;
+        }
+
+        private int SumOfBallsInFrame(int roll)
+        {
+            return rolls[roll] + rolls[roll + 1];
+        }
+
+        private int SpareBonus(int roll)
+        {
+            return rolls[roll + 2];
+        }
+
+        private int StrikeBonus(int roll)
+        {
+            return rolls[roll + 1] + rolls[roll + 2];
         }
 
         private bool IsSpare(int roll)

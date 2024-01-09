@@ -19,16 +19,21 @@ public class Game
 
         for (int frame = 0; frame < 10; frame++)
         {
-            // spare
-            if (IsSpare(roll))
+            if (rolls[roll] == 10) // strike
+            {
+                score += 10 + rolls[roll + 1] + rolls[roll + 2];
+                roll++;
+            }
+            else if (IsSpare(roll))
             {
                 score += 10 + rolls[roll + 2];
+                roll += 2;
             }
             else
             {
                 score += rolls[roll] + rolls[roll + 1];
+                roll += 2;
             }
-            roll += 2;
         }
 
         return score;
@@ -103,6 +108,30 @@ public class GameTest
         g.Roll(3);
         RollMany(16, 0);
         Assert.AreEqual(24, g.Score());
+    }
+
+    [TestMethod]
+    public void TestOneStrike()
+    {
+        RollStrike();
+        g.Roll(3);
+        g.Roll(4);
+        RollMany(16, 0);
+
+        Assert.AreEqual(24, g.Score());
+    }
+
+    [TestMethod]
+    public void TestPerfectGame()
+    {
+        RollMany(12, 10);
+
+        Assert.AreEqual(300, g.Score());
+    }
+
+    private void RollStrike()
+    {
+        g.Roll(10);
     }
 
     private void RollSpare()
