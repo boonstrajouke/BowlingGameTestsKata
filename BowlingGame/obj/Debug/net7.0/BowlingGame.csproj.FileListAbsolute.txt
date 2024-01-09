@@ -1,0 +1,5 @@
+/Users/joukeboonstra/Projects/BowlingGame/BowlingGame/obj/Debug/net7.0/BowlingGame.csproj.AssemblyReference.cache
+/Users/joukeboonstra/Projects/BowlingGame/BowlingGame/obj/Debug/net7.0/BowlingGame.GeneratedMSBuildEditorConfig.editorconfig
+/Users/joukeboonstra/Projects/BowlingGame/BowlingGame/obj/Debug/net7.0/BowlingGame.AssemblyInfoInputs.cache
+/Users/joukeboonstra/Projects/BowlingGame/BowlingGame/obj/Debug/net7.0/BowlingGame.AssemblyInfo.cs
+/Users/joukeboonstra/Projects/BowlingGame/BowlingGame/obj/Debug/net7.0/BowlingGame.csproj.CoreCompileInputs.cache
